@@ -18,6 +18,9 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
             margin: "auto",
             borderRadius: "12px",
             border: "1px solid #dbeafe",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
         }}
         className="bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 p-6 rounded-xl shadow-lg border border-blue-200"
     >
@@ -28,18 +31,18 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
             </h1>
 
             {/* Message */}
-            <p className="mb-6">
+            <p className="mb-6 text-xl">
                 Someone has just signed up for the <strong>CrafteDesignz</strong>{" "}
                 mailing list. Here are their details:
             </p>
 
             {/* User Details */}
-            <div className="mb-4">
+            <div className="mb-4 text-lg flex items-center justify-center gap-4">
                 <label className="font-semibold block mb-1">Name:</label>
                 <p className="text-gray-700">{name}</p>
             </div>
 
-            <div className="mb-4">
+            <div className="mb-4 text-lg flex items-center justify-center gap-4">
                 <label className="font-semibold block mb-1">Email:</label>
                 <p className="text-gray-700">{email}</p>
             </div>
