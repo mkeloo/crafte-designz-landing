@@ -17,7 +17,7 @@ export async function POST(req: Request) {
 
         // Send the email
         const { data, error } = await resend.emails.send({
-            from: 'CrafteDesignz <notifications@craftedesignz.com>',
+            from: 'CrafteDesignz <notifications@mailer.craftedesignz.com>',
             to: ['craftedesignzinc@gmail.com'], // Recipient email
             subject: 'New Mailing List Signup!',
             react: await EmailTemplate({ name, email }), // Pass dynamic data to the template
