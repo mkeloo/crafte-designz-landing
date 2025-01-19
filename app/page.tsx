@@ -67,16 +67,17 @@ export default function Home() {
           {/* Heading and Description */}
           <div className="max-w-xl text-center mb-8">
             <h1 className="text-3xl font-bold mb-4 text-blue-900">
-              Welcome to CrafteDesignz
+              CrafteDesignz — Coming Soon!
             </h1>
             <p className="text-blue-900 leading-relaxed font-semibold text-[18px] flex flex-col justify-center items-center space-y-2">
               <span>
-                We specialize in handcrafted chunky blankets, unique keychains,
-                and the fun &ldquo;Blind Date with a Book&rdquo; experience!
+                We’re putting the final touches on our store, featuring handcrafted
+                chunky blankets, unique keychains, and an exciting &ldquo;Blind Date
+                with a Book&rdquo; experience!
               </span>
               <span>
-                Sign up below to stay updated on our latest products and deals,
-                or visit our Etsy store in the meantime.
+                Sign up below to be the first to know when we launch
+                {/* or visit our Etsy store in the meantime. */}
               </span>
             </p>
           </div>
@@ -124,7 +125,7 @@ export default function Home() {
           </div>
 
           {/* Etsy Link */}
-          <div className="mt-8 text-center">
+          {/* <div className="mt-8 text-center">
             <Button
               asChild
               className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 font-bold text-lg"
@@ -137,7 +138,7 @@ export default function Home() {
                 Visit Our Etsy Store
               </a>
             </Button>
-          </div>
+          </div> */}
         </Card>
       </div>
     </div>
