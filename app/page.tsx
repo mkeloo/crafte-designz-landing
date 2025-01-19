@@ -35,7 +35,7 @@ export default function Home() {
         const errorData = await res.json();
         throw new Error(errorData.error || "Unknown error");
       }
-      setMessage("Success! Check your inbox.");
+      setMessage("Thanks for signing up! 🎉");
       setName("");
       setEmail("");
     } catch (error: any) {
@@ -112,13 +112,13 @@ export default function Home() {
                   />
                 </div>
               </div>
-              <Button type="submit" className="w-full font-bold text-lg" disabled={loading}>
+              <Button type="submit" className="w-full font-bold text-lg p-4" disabled={loading}>
                 {loading ? "Sending..." : "Join Our List"}
               </Button>
             </form>
             {/* Show a success or error message */}
             {message && (
-              <p className="mt-4 text-center text-sm font-medium text-red-600">
+              <p className="mt-4 p-2 text-center text-base font-bold rounded-lg bg-green-200  text-green-800">
                 {message}
               </p>
             )}
