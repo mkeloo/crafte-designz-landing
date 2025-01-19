@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function HomeClient() {
     // Local state to hold the form data
@@ -198,6 +199,7 @@ export default function HomeClient() {
           */}
                 </Card>
             </div>
+            <SpeedInsights />
         </div>
     );
 }
