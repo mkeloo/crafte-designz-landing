@@ -3,21 +3,36 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST() {
+export async function POST(req: Request) {
     try {
+        // Parse the request body
+        const { name, email } = await req.json();
+
+        if (!name || !email) {
+            return new Response(
+                JSON.stringify({ error: 'Missing firstName or email in the request body' }),
+                { status: 400 }
+            );
+        }
+
+        // Send the email
         const { data, error } = await resend.emails.send({
-            from: 'Acme <onboarding@resend.dev>',
-            to: ['craftedesignzinc@gmail.com'],
-            subject: 'Hello world',
-            react: await EmailTemplate({ firstName: 'John' }),
+            from: 'CrafteDesignz <notifications@craftedesignz.com>',
+            to: ['craftedesignzinc@gmail.com'], // Recipient email
+            subject: 'New Mailing List Signup!',
+            react: await EmailTemplate({ name, email }), // Pass dynamic data to the template
         });
 
         if (error) {
-            return Response.json({ error }, { status: 500 });
+            console.error('Resend Error:', error);
+            return new Response(JSON.stringify({ error }), { status: 500 });
         }
 
-        return Response.json(data);
+        return new Response(JSON.stringify(data), { status: 200 });
     } catch (error) {
-        return Response.json({ error }, { status: 500 });
+        console.error('Unexpected Error:', error);
+        return new Response(JSON.stringify({ error: 'An unexpected error occurred' }), {
+            status: 500,
+        });
     }
 }
