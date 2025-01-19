@@ -34,7 +34,7 @@ export default function Home() {
           {/* Heading and Description */}
           <div className="max-w-xl text-center mb-8">
             <h1 className="text-3xl font-bold mb-4 text-blue-900">
-              Welcome to Crafted Designz
+              Welcome to Crafte Designz
             </h1>
             <p className="text-blue-900 leading-relaxed font-semibold text-[18px] flex flex-col justify-center items-center space-y-2">
               <span>We specialize in handcrafted chunky blankets, unique keychains,
