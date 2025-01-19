@@ -22,27 +22,27 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
             alignItems: "center",
             justifyContent: "center",
         }}
-        className="bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 p-6 rounded-xl shadow-lg border border-blue-200"
+        className="bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 p-6 rounded-xl shadow-lg border border-blue-200  text-center"
     >
         <div className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-md">
             {/* Header */}
-            <h1 className="text-2xl font-bold text-gray-900 mb-4">
+            <h1 className="text-2xl font-bold text-gray-900 mb-4  text-center">
                 🎉🎉🎉 New Mailing List Signup! 🎉🎉🎉
             </h1>
 
             {/* Message */}
-            <p className="mb-6 text-xl">
+            <p className="mb-6 text-xl  text-center">
                 Someone has just signed up for the <strong>CrafteDesignz</strong>{" "}
                 mailing list. Here are their details:
             </p>
 
             {/* User Details */}
-            <div className="mb-4 text-lg flex items-center justify-center gap-4">
+            <div className="mb-4 text-lg flex items-center justify-center gap-4 text-left">
                 <label className="font-semibold block mb-1">Name:</label>
                 <p className="text-gray-700">{name}</p>
             </div>
 
-            <div className="mb-4 text-lg flex items-center justify-center gap-4">
+            <div className="mb-4 text-lg flex items-center justify-center gap-4 text-left">
                 <label className="font-semibold block mb-1">Email:</label>
                 <p className="text-gray-700">{email}</p>
             </div>
