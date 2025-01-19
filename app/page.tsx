@@ -58,9 +58,9 @@ export default function Home() {
       className="bg-[rgb(230, 216, 187)]"
     >
       {/* Content Container */}
-      <div className="flex flex-col items-center justify-start flex-grow px-4 py-10 gap-y-4">
+      <div className="flex flex-col items-center justify-start flex-grow px-4 py-4 md:py-10 gap-y-4">
         {/* Logo */}
-        <div className="mt-10">
+        <div className="mt-0 md:mt-10">
           <Image src={logo} alt="Crafted Designz Logo" width={400} height={100} />
         </div>
 
@@ -80,7 +80,6 @@ export default function Home() {
               className="
                 text-2xl
                 md:text-3xl
-                lg:text-4xl
                 font-bold
                 mb-4
                 text-blue-900
@@ -93,7 +92,6 @@ export default function Home() {
               className="
                 text-base
                 md:text-lg
-                lg:text-xl
                 leading-relaxed
                 font-semibold
                 text-blue-900
@@ -116,7 +114,7 @@ export default function Home() {
 
           {/* Form */}
           <div className="w-full max-w-md mx-auto">
-            <form onSubmit={handleSubmit} className="flex flex-col items-center gap-y-4">
+            <form onSubmit={handleSubmit} className="flex flex-col items-center gap-y-6">
               <div className="flex flex-col w-full gap-y-4 sm:flex-row sm:gap-x-4">
                 <div className="w-full">
                   <Label htmlFor="name" className="text-slate-800">
