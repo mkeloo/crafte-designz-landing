@@ -15,7 +15,7 @@ export const metadata = {
     siteName: "CrafteDesignz",
     images: [
       {
-        url: "/public/social_logo.webp",
+        url: "/assets/social_logo.webp",
         width: 1200,
         height: 630,
         alt: "CrafteDesignz logo and handcrafted products",
