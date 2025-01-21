@@ -55,9 +55,9 @@ export default function HomeClient() {
             style={{ backgroundImage: `url(${bgImage.src})` }}
         >
             {/* Content Container */}
-            <div className="flex flex-col items-center justify-start flex-grow px-4 py-4 md:py-10 gap-y-4">
+            <div className="flex flex-col items-center justify-start flex-grow px-4 py-4 gap-y-2">
                 {/* Logo */}
-                <div className="mt-0 md:mt-10">
+                <div className="mt-0 md:mt-2 lg:mt-4 ">
                     <Image src={logo} alt="Crafted Designz Logo" width={400} height={100} />
                 </div>
 
