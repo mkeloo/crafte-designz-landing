@@ -29,26 +29,26 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
         <div className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-md">
             {/* Header */}
             <h1 className="text-2xl font-bold text-gray-900 mb-4  text-center">
-                🎉🎉🎉 New Message <strong>CrafteDesignz</strong>  🎉🎉🎉
+                🎉🎉🎉 New Message For <strong>CrafteDesignz</strong>  🎉🎉🎉
             </h1>
 
             {/* User Details */}
             <div className="mb-4 text-lg flex items-center justify-center gap-4 text-left">
-                <p className="font-semibold block mb-1">
-                    Name:   <span className="text-gray-700">{name}</span>
+                <p className="font-semibold block mb-1 text-lg">
+                    <strong>Name:</strong>   <span className="text-gray-700">{name}</span>
                 </p>
 
             </div>
 
             <div className="mb-4 text-lg flex items-center justify-center gap-4 text-left">
-                <p className="font-semibold block mb-1">
-                    Email:   <span className="text-gray-700">{email}</span>
+                <p className="font-semibold block mb-1 text-lg">
+                    <strong>Email:</strong>   <span className="text-gray-700">{email}</span>
                 </p>
             </div>
 
             <div className="mb-4 text-lg flex items-center justify-center gap-4 text-left">
-                <p className="font-semibold block mb-1">
-                    Message:   <span className="text-gray-700">{textMessage}</span>
+                <p className="font-semibold block mb-1 text-lg">
+                    <strong>Message:</strong>   <span className="text-gray-700">{textMessage}</span>
                 </p>
             </div>
 
