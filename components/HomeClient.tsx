@@ -14,6 +14,7 @@ export default function HomeClient() {
     // Local state to hold the form data
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const [textMessage, setTextMessage] = useState("");
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
 
@@ -29,7 +30,7 @@ export default function HomeClient() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ name, email }),
+                body: JSON.stringify({ name, email, textMessage }),
             });
 
             if (!res.ok) {
@@ -40,6 +41,7 @@ export default function HomeClient() {
             setMessage("Thanks for signing up! 🎉");
             setName("");
             setEmail("");
+            setTextMessage("");
         } catch (error: any) {
             setMessage(`Something went wrong: ${error.message}`);
         } finally {
@@ -70,7 +72,7 @@ export default function HomeClient() {
                     "
                 >
                     {/* Heading and Description */}
-                    <div className="max-w-xl text-center mb-6 md:mb-8">
+                    <div className="max-w-xl text-center mb-6">
                         <h1
                             className="
                             text-3xl
@@ -87,16 +89,16 @@ export default function HomeClient() {
                         </h1>
                         <p
                             className="
-                text-base
-                md:text-lg
-                leading-relaxed
-                font-semibold
-                text-blue-900
-                flex flex-col
-                justify-center
-                items-center
-                space-y-2
-              "
+                            text-base
+                            md:text-lg
+                            leading-relaxed
+                            font-semibold
+                            text-blue-900
+                            flex flex-col
+                            justify-center
+                            items-center
+                            space-y-2
+                        "
                         >
                             <span>
                                 We’re putting the final touches on our store, featuring handcrafted
@@ -112,42 +114,57 @@ export default function HomeClient() {
                     {/* Form */}
                     <div className="w-full max-w-md mx-auto">
                         <form onSubmit={handleSubmit} className="flex flex-col items-center gap-y-6">
-                            <div className="flex flex-col w-full gap-y-4 sm:flex-row sm:gap-x-4">
-                                <div className="w-full">
-                                    <Label htmlFor="name" className="text-slate-800">
-                                        Name
-                                    </Label>
-                                    <Input
-                                        id="name"
-                                        placeholder="Your Name"
-                                        className="text-slate-800 bg-orange-50"
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                    />
+                            <div className="flex flex-col w-full gap-y-4">
+                                <div className="w-full flex flex-col md:flex-row items-center justify-center gap-y-4 md:gap-x-4 md:gap-y-4">
+                                    <div className="w-full">
+                                        <Label htmlFor="name" className="font-bold text-base text-blue-900">
+                                            Name
+                                        </Label>
+                                        <Input
+                                            id="name"
+                                            placeholder="Your Name"
+                                            className="text-slate-800 bg-orange-50"
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="w-full">
+                                        <Label htmlFor="email" className="font-bold text-base text-blue-900">
+                                            Email
+                                        </Label>
+                                        <Input
+                                            id="email"
+                                            type="email"
+                                            placeholder="Your Email"
+                                            className="text-slate-800 bg-orange-50"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                        />
+                                    </div>
                                 </div>
+
                                 <div className="w-full">
-                                    <Label htmlFor="email" className="text-slate-800">
-                                        Email
+                                    <Label htmlFor="message" className="font-bold text-base text-blue-900">
+                                        Leave us a message!
                                     </Label>
-                                    <Input
-                                        id="email"
-                                        type="email"
-                                        placeholder="Your Email"
-                                        className="text-slate-800 bg-orange-50"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                    />
+                                    <textarea
+                                        id="message"
+                                        placeholder="Your Message"
+                                        className="w-full h-32 p-3 text-slate-800 bg-orange-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
+                                        value={textMessage}
+                                        onChange={(e) => setTextMessage(e.target.value)}
+                                    ></textarea>
                                 </div>
                             </div>
                             <Button
                                 type="submit"
                                 className="
-                  w-full
-                  font-bold
-                  text-base md:text-lg
-                  p-3
-                  md:p-4
-                "
+                                    w-full
+                                    font-bold
+                                    text-base md:text-lg
+                                    p-3
+                                    md:p-4
+                                    "
                                 disabled={loading}
                             >
                                 {loading ? "Sending..." : "Join Our List"}

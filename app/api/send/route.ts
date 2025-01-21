@@ -6,7 +6,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req: Request) {
     try {
         // Parse the request body
-        const { name, email } = await req.json();
+        const { name, email, textMessage } = await req.json();
 
         if (!name || !email) {
             return new Response(
@@ -20,7 +20,7 @@ export async function POST(req: Request) {
             from: 'CrafteDesignz <notifications@craftedesignz.com>',
             to: ['craftedesignzinc@gmail.com'], // Recipient email
             subject: 'New Mailing List Signup!',
-            react: await EmailTemplate({ name, email }), // Pass dynamic data to the template
+            react: await EmailTemplate({ name, email, textMessage }), // Pass dynamic data to the template
         });
 
         if (error) {
